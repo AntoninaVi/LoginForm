@@ -6,24 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
+    
 </head>
 
 <body>
 
     <div class="login-container">
         <div id="main">
-          
+
             <h1>Sign In</h1>
             <input id="email" type="text" placeholder="Email"></input>
             <input id="password" type="password" placeholder="Password"></input>
             <button id="submit">Submit</button>
             <p><span>or</span></p>
             <button id="sign-up">Sign Up</button>
-       
+
         </div>
 
         <div id="create-acct">
-            
+
             <h1>Create an Account</h1>
             <input id="email-signup" type="text" placeholder="Email *"></input>
             <input id="confirm-email-signup" type="email" placeholder="Confirm Email *"></input>
@@ -31,9 +32,34 @@
             <!-- <input id="confirm-password-signup" type="password" placeholder="Confirm Password *"></input> -->
             <button id="create-acct-btn">Create Account</button>
             <button id="return-btn">Return to Login</button>
-       
+
         </div>
     </div>
+
+
+
+    <h1>Muthu - Firebase read and write</h1>
+    <div class="esp32_web_server_login_page_top">
+        <input type="text" placeholder="user name" id="user_name">
+        <input type="text" placeholder="user password" id="user_name_password">
+        <div>
+            <button id="write_data_to_firebase">Write Data to Firebase</button>
+        </div>
+        <div>
+            <button id="read_data_from_firebase">Read Data from Firebase</button>
+        </div>
+    </div>
+    <div class="firebase__display-text">
+
+        <p id="display_read_data">
+        </p>
+    </div>
+
+
+
+
+
+
 
 
     <script type="module" src="/script.js"></script>
