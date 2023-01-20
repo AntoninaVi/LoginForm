@@ -1,153 +1,156 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
-
+    font-family: "Quicksand", sans-serif;
 }
-.wrapper{
-    background-image: url(img/Group\ 3.png);
+.wrapper {
+    background-image: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: inherit;
-    padding: 5em;
-    display: flex;
-   
+}
+.container {
+    max-width: 1160px;
+    width: 100%;
     min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5em;
+    align-items: center;
+    margin: auto;
+    padding: 2em;
 }
 
 .welcome-container {
     display: grid;
-    grid-template-rows: 0em 4em;
-    gap: 10em;
+    grid-template-rows: 0em 10em;
+    gap: 9em;
     align-items: center;
     justify-content: left;
-
+    margin-top: -10em;
 }
 .logotype {
     display: flex;
     max-width: 10.5em;
     width: 100%;
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 22px;
-color: #FFFFFF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    color: #ffffff;
 }
 .logo {
+    max-width: 3.7em;
+    width: 100%;
 }
-.logotype-text {
-}
-.welcome-text{
-    
- 
 
-}
 .welcome-title {
-    font-family: 'Quicksand';
+    font-family: "Quicksand";
     font-weight: 700;
     font-size: 28px;
     line-height: 30px;
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #ffffff;
     margin-bottom: 1em;
 }
-.welcome-description{
-    font-family: 'Quicksand';
+.welcome-description {
+    font-family: "Quicksand";
     font-style: normal;
     font-weight: 400;
     font-size: 28px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 10em;
 }
 
 input {
-    background: #FFFFFF;
+    background: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-origin: content-box;
     box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.12);
     border-radius: 50px;
     border: none;
-    max-width: 24em;
     width: 100%;
-    padding: 1em 0 1em 55px;
+    padding: 1em 0 1em 1.5em;
     margin-bottom: 0.7em;
+    text-indent: 2em;
 }
 
+input:first-of-type{
+    background-image: url(img/person.svg);
+}
 input:last-of-type {
-    margin-bottom: 0;
+    background-image: url(img/key.svg);
+    margin-bottom: 1.5em;
 }
-
 
 .login-container {
     width: 100%;
-max-width: 25em;
-margin-left: auto;
-margin-right: auto;
+    max-width: 25em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#main{
+#main {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     max-width: 23em;
     width: 100%;
-
 }
-.login-title{
-    font-family: 'Quicksand';
-font-style: normal;
-font-weight: 700;
-font-size: 29px;
-line-height: 30px;
-text-align: center;
-text-transform: uppercase;
-color: #00344D;
-}
-
-.login-description{
-font-family: 'Quicksand';
-font-style: normal;
-font-weight: 700;
-font-size: 19px;
-line-height: 30px;
-text-align: center;
-text-transform: uppercase;
-color: #00344D;
-margin-bottom: 1.8em;
+.login-title {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 29px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00344d;
 }
 
-#submit, #create-acct-btn{
-    margin-top: 1.5em;
+.login-description {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #00344d;
+    margin-bottom: 1.8em;
+}
+
+#submit,
+#create-acct-btn {
     margin-bottom: 1.5em;
-background: linear-gradient(246.06deg, #3AB6DA 0%, #0F9CD5 96.92%);
-border-radius: 25px;
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 24px;
-text-align: center;
-color: #FFFFFF;
-max-width: 23em;
-width: 100%;
-padding: 0.9em;
-border: none;
+    background: linear-gradient(246.06deg, #3ab6da 0%, #0f9cd5 96.92%);
+    border-radius: 25px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    padding: 0.9em;
+    border: none;
 }
-
-
 
 button:hover {
-  cursor: pointer;
-  opacity: 0.8;
-  transition: 0.3s;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 
 #create-acct {
@@ -157,33 +160,36 @@ button:hover {
     margin: 0 auto;
 }
 
-#sign-up, #return-btn {
-    font-family: 'Quicksand';
+#sign-up,
+#return-btn {
+    display: block;
+    font-family: "Quicksand";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
     text-align: center;
     text-decoration-line: underline;
-    color: #00344D;
+    color: #00344d;
     background-color: transparent;
     border: none;
     margin-right: auto;
     margin-left: auto;
 }
-#read_data_from_firebase{
-    font-family: 'Quicksand';
+#read_data_from_firebase {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Quicksand";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-color: coral;
+    color: coral;
     background-color: transparent;
-    border: none;
+    border: 1px solid coral;
+    border-radius: 10px;
+    padding: 1em;
 }
 
-
-.display_read_data{
-   
-}
