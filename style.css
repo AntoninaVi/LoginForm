@@ -192,3 +192,8 @@ button:hover {
     border-radius: 10px;
     padding: 1em;
 }
+.copyright{
+   position: relative;
+  left: 55%;;
+    padding-bottom: 1.5em;
+}
