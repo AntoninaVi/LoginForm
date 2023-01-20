@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,62 +9,140 @@
 }
 
 body {
-  background-color: #0583D2;
+    font-family: 'Quicksand', sans-serif;
+
+}
+.wrapper{
+    background-image: url(img/Group\ 3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: inherit;
+    padding: 5em;
+    display: flex;
+   
+    min-height: 100vh;
 }
 
-h1 {
-  margin-bottom: 8%;
-  text-align: center;
-  font-family: "Fredoka One", cursive;
-  color: #0583D2;
-  letter-spacing: 0.1em;
-}
+.welcome-container {
+    display: grid;
+    grid-template-rows: 0em 4em;
+    gap: 10em;
+    align-items: center;
+    justify-content: left;
 
-p {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  width: 100%;
-  text-align: center;
-  border-bottom: 1px solid #000;
-  line-height: 0.1em;
 }
+.logotype {
+    display: flex;
+    max-width: 10.5em;
+    width: 100%;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+color: #FFFFFF;
+}
+.logo {
+}
+.logotype-text {
+}
+.welcome-text{
+    
+ 
 
-p span {
-  background:#fff;
-  padding:0 10px;
+}
+.welcome-title {
+    font-family: 'Quicksand';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 1em;
+}
+.welcome-description{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 30px;
+    color: #FFFFFF;
+    max-width: 10em;
 }
 
 input {
-  margin-bottom: 3%;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.12);
+    border-radius: 50px;
+    border: none;
+    max-width: 24em;
+    width: 100%;
+    padding: 1em 0 1em 55px;
+    margin-bottom: 0.7em;
 }
 
 input:last-of-type {
-  margin-bottom: 0;
+    margin-bottom: 0;
 }
 
-input, button {
-  padding: 3%;
-  width: 100%;
-}
 
 .login-container {
-  background-color: white;
-  padding: 7%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  /* horizontal align */
-  width: 40vw;
-  margin-left: 30vw;
-  /* vertical align */
-  height: 70vh;
-  margin-top: 15vh;
+    width: 100%;
+max-width: 25em;
+margin-left: auto;
+margin-right: auto;
 }
 
-#submit, #create-acct-btn {
-  background-color: #0583D2;
-  color: white;
-  border: none;
-  margin-top: 5%;
+#main{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 23em;
+    width: 100%;
+
 }
+.login-title{
+    font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 29px;
+line-height: 30px;
+text-align: center;
+text-transform: uppercase;
+color: #00344D;
+}
+
+.login-description{
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 700;
+font-size: 19px;
+line-height: 30px;
+text-align: center;
+text-transform: uppercase;
+color: #00344D;
+margin-bottom: 1.8em;
+}
+
+#submit, #create-acct-btn{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+background: linear-gradient(246.06deg, #3AB6DA 0%, #0F9CD5 96.92%);
+border-radius: 25px;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 24px;
+text-align: center;
+color: #FFFFFF;
+max-width: 23em;
+width: 100%;
+padding: 0.9em;
+border: none;
+}
+
+
 
 button:hover {
   cursor: pointer;
@@ -71,18 +150,40 @@ button:hover {
   transition: 0.3s;
 }
 
-#sign-up {
-  border: none;
-}
-
 #create-acct {
-  display: none;
+    max-width: 23em;
+    width: 100%;
+    display: none;
+    margin: 0 auto;
 }
 
-#return-btn {
-  background: none;
-  color: grey;
-  text-decoration: underline;
-  border: none;
-  margin-top: 3%;
+#sign-up, #return-btn {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #00344D;
+    background-color: transparent;
+    border: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+#read_data_from_firebase{
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+color: coral;
+    background-color: transparent;
+    border: none;
+}
+
+
+.display_read_data{
+   
 }
