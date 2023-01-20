@@ -86,7 +86,7 @@ input {
     text-indent: 2em;
 }
 
-input:first-of-type{
+input:first-of-type {
     background-image: url(img/person.svg);
 }
 input:last-of-type {
@@ -192,4 +192,3 @@ button:hover {
     border-radius: 10px;
     padding: 1em;
 }
-
