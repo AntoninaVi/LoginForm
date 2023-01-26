@@ -17,10 +17,8 @@ function write_db() {
     console.log("Working");
     var db = getDatabase();
     var create_db_table = ref(db, 'users/' + 'usersTable/');
-
     var user_name = document.getElementById("email_signup").value;
     var user_password = document.getElementById("password_signup").value;
-
 
     if (user_name == '' || user_password == '') {
         alert("Please fill out all fields");
@@ -67,4 +65,4 @@ write_data_to_firebase.addEventListener('click', write_db);
 
 // Call
 var read_data_from_firebase = document.getElementById("read_data_from_firebase");
-read_data_from_firebase.addEventListener('click', read_db);
+readDataFromFirebase.addEventListener('click', read_db);

@@ -30,11 +30,7 @@ const createacct = document.getElementById("create-acct")
 
 const signupEmailIn = document.getElementById("email_signup");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
-<<<<<<< HEAD
 const signupPasswordIn = document.getElementById("password_signup");
-=======
-const signupPasswordIn = document.getElementById("password-signup");
->>>>>>> a4d9a3858b1f4ed978e064998fb7d48d659a214b
 const createacctbtn = document.getElementById("create-acct-btn");
 
 const returnBtn = document.getElementById("return-btn");
@@ -107,7 +103,3 @@ returnBtn.addEventListener("click", function () {
     main.style.display = "block";
     createacct.style.display = "none";
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> a4d9a3858b1f4ed978e064998fb7d48d659a214b
