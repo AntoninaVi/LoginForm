@@ -17,8 +17,11 @@ function write_db() {
     console.log("Working");
     var db = getDatabase();
     var create_db_table = ref(db, 'users/' + 'usersTable/');
+
     var user_name = document.getElementById("email_signup").value;
     var user_password = document.getElementById("password_signup").value;
+
+
     if (user_name == '' || user_password == '') {
         alert("Please fill out all fields");
         console.log("Please fill out all fields");

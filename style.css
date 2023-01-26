@@ -176,7 +176,11 @@ button:hover {
     margin-right: auto;
     margin-left: auto;
 }
+<<<<<<< HEAD
 #readDataFromFirebase {
+=======
+#read_data_from_firebase {
+>>>>>>> a4d9a3858b1f4ed978e064998fb7d48d659a214b
     display: flex;
     margin-left: auto;
     margin-right: auto;
