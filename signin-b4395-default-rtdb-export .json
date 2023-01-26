@@ -1,0 +1,11 @@
+{
+"users":
+[
+  {
+    "user_name ": "my@email.com"
+  },
+  {
+    "user_name" : "my@email.ru"
+  }
+]
+}

@@ -5,64 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="data.js"></script>
 </head>
 
 <body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="welcome-container">
+                <div class="logotype">
+                    <img src="img/logo.svg" alt="logo" class="logo">
+                    <p class="logotype-text">Single sign-on (SSO)</p>
+                </div>
+                <div class="welcome-text">
+                    <h1 class="welcome-title">Welcome back!</h1>
+                    <p class="welcome-description">Enter your ID and Password to continue</p>
+                </div>
 
-    <div class="login-container">
-        <div id="main">
+            </div>
 
-            <h1>Sign In</h1>
-            <input id="email" type="text" placeholder="Email"></input>
-            <input id="password" type="password" placeholder="Password"></input>
-            <button id="submit">Submit</button>
-            <p><span>or</span></p>
-            <button id="sign-up">Sign Up</button>
+            <div class="login-container">
+                <div id="main">
+                    <h2 class="login-title">Sign In</h2>
+                    <p class="login-description">to Access the portal</p>
+                    <input id="email" type="text" placeholder="Enter Email" autocomplete="yes"></input>
+                    <input id="password" type="password" placeholder="Enter Password" autocomplete="yes"></input>
+                    <button id="submit">Login</button>
+                    <button id="sign-up">Sign Up</button>
+                </div>
 
+                <div id="create-acct">
+
+                    <input id="email_signup" type="text" placeholder="Enter Email" autocomplete="yes"></input>
+                    <input id="confirm-email-signup" type="email" placeholder="Confirm Email"
+                        autocomplete="yes"></input>
+                    <input id="password_signup" type="password" placeholder="Enter Password" autocomplete="yes"></input>
+                    <button id="create-acct-btn">Create Account</button>
+                    <button id="return-btn">Return to Login</button>
+
+                </div>
+                <div class="display__data">
+                    <!-- <input id="findID" type="text"> <br><br> -->
+                    <button id="readDataFromFirebase">Read Data from Firebase</button>
+                    <p id="display_read_data">
+                    </p>
+                </div>
+            </div>
+          
         </div>
-
-        <div id="create-acct">
-
-            <h1>Create an Account</h1>
-            <input id="email-signup" type="text" placeholder="Email *"></input>
-            <input id="confirm-email-signup" type="email" placeholder="Confirm Email *"></input>
-            <input id="password-signup" type="password" placeholder="Password *"></input>
-            <!-- <input id="confirm-password-signup" type="password" placeholder="Confirm Password *"></input> -->
-            <button id="create-acct-btn">Create Account</button>
-            <button id="return-btn">Return to Login</button>
-
-        </div>
+        <p class="copyright">Copyright © 2022 Commlink Info Tech Ltd. All rights reserved. </p>
     </div>
 
-
-
-    <h1>Muthu - Firebase read and write</h1>
-    <div class="esp32_web_server_login_page_top">
-        <input type="text" placeholder="user name" id="user_name">
-        <input type="text" placeholder="user password" id="user_name_password">
-        <div>
-            <button id="write_data_to_firebase">Write Data to Firebase</button>
-        </div>
-        <div>
-            <button id="read_data_from_firebase">Read Data from Firebase</button>
-        </div>
-    </div>
-    <div class="firebase__display-text">
-
-        <p id="display_read_data">
-        </p>
-    </div>
-
-
-
-
-
-
-
-
-    <script type="module" src="/script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
