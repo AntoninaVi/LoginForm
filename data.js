@@ -18,10 +18,10 @@ let userId = document.getElementById('create-acct');
 let userEmail = document.getElementById('email_signup');
 
 
-let readId = document.getElementById('display_read_data');
 let readIdBtn = document.getElementById('readDataFromFirebase');
+let readId = document.getElementById('display_read_data');
 
-let insertBtn = document.getElementById('create-acct-btn');
+
 
 
 // get data
@@ -36,14 +36,14 @@ getDocs(colRef)
         snapshot.docs.forEach((doc) => {
             users.push({ ...doc.data(), id: doc.id })
         })
+        readId.innerHTML = JSON.stringify(users);
         console.log(users)
     })
     .catch(err => {
         console.log(err.message)
     })
 
-
-    // adding docs
+// adding data
 const addUserForm = document.getElementById('create-acct')
 addUserForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -51,18 +51,10 @@ addUserForm.addEventListener('submit', (e) => {
     addDoc(colRef, {
         email: addUserForm.email.value,
     })
-    .then(() => {
-        addUserForm.reset()
-    })
+        .then(() => {
+            addUserForm.reset()
+        })
 })
-
-
-// insertBtn.addEventListener('click', readData);
-
-
-
-
-
 
 
 
@@ -95,30 +87,27 @@ addUserForm.addEventListener('submit', (e) => {
 // }
 
 // Read
-function read_db() {
-    var db = getDatabase();
-    var connect_db = ref(db, 'users/');
-    var retrieve_data = '';
-    console.log("Reading");
-    onValue(connect_db, (snapshot) => {
-        retrieve_data = snapshot.val();
-        console.log("user_name: " + retrieve_data.user_name);
-        call_loop_print(retrieve_data);
-        document.getElementById("display_read_data").innerHTML = "<pre>" + "user_name: " + retrieve_data.user_name + "</pre>" +
-            '\n' + "<pre>" + "user_name_password: " + retrieve_data.user_name_password + "</pre>";
-    })
-    function call_loop_print(retrieve_data) {
-        for (var r = 0; r < Object.entries(retrieve_data).length; r++) {
-            var key = Object.keys(retrieve_data)[r];
-            var value = retrieve_data[key];
-            console.log("Key_" + r + ': ' + key + " Value_:" + r + ': ' + value);
-        }
-    }
-}
+// function read_db() {
+//     var db = getDatabase();
+//     var connect_db = ref(db, 'users/');
+//     var retrieve_data = '';
+//     console.log("Reading");
+//     onValue(connect_db, (snapshot) => {
+//         retrieve_data = snapshot.val();
+//         console.log("user_name: " + retrieve_data.user_name);
+//         call_loop_print(retrieve_data);
+//         document.getElementById("display_read_data").innerHTML = "<pre>" + "user_name: " + retrieve_data.user_name + "</pre>" +
+//             '\n' + "<pre>" + "user_name_password: " + retrieve_data.user_name_password + "</pre>";
+//     })
+//     function call_loop_print(retrieve_data) {
+//         for (var r = 0; r < Object.entries(retrieve_data).length; r++) {
+//             var key = Object.keys(retrieve_data)[r];
+//             var value = retrieve_data[key];
+//             console.log("Key_" + r + ': ' + key + " Value_:" + r + ': ' + value);
+//         }
+//     }
+// }
 // Call
 // var write_data_to_firebase = document.getElementById("create-acct-btn");
 // write_data_to_firebase.addEventListener('click', write_db);
 
-// Call
-// var read_data_from_firebase = document.getElementById("readDataFromFirebase");
-// readDataFromFirebase.addEventListener('click', read_db);
