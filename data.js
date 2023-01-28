@@ -17,14 +17,9 @@ const db = getFirestore();
 let userId = document.getElementById('create-acct');
 let userEmail = document.getElementById('email_signup');
 
-
 let readIdBtn = document.getElementById('readDataFromFirebase');
 let readId = document.getElementById('readId');
 
-
-
-
-// get data
 
 // collection ref
 const colRef = collection(db, 'users')
