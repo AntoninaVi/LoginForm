@@ -26,7 +26,7 @@ const signupButton = document.getElementById("sign-up");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");
-const createacct = document.getElementById("create-acct")
+const createacct = document.getElementById("create-acct");
 
 const signupEmailIn = document.getElementById("email_signup");
 const confirmSignupEmailIn = document.getElementById("confirm-email-signup");

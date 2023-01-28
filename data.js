@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+import { getDatabase, ref, set, child, update, remove, onValue } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+import { getFirestore, setDoc, collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBkFFG0G5Pf7kpj8Te3yL8w9b7p6XMinxs",
@@ -11,37 +11,93 @@ const firebaseConfig = {
     messagingSenderId: "291490998392",
     appId: "1:291490998392:web:00db15797aec1ce588658d"
 };
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+const db = getFirestore();
 
-function write_db() {
-    console.log("Working");
-    var db = getDatabase();
-    var create_db_table = ref(db, 'users/' + 'usersTable/');
-    var user_name = document.getElementById("email_signup").value;
-    var user_password = document.getElementById("password_signup").value;
+let userId = document.getElementById('create-acct');
+let userEmail = document.getElementById('email_signup');
 
-    if (user_name == '' || user_password == '') {
-        alert("Please fill out all fields");
-        console.log("Please fill out all fields");
-        throw "Please fill out all fields";
-    }
-    set(ref(db, 'users/' + 'usersTable/'), {
-        user_name: user_name,
-        user_name_password: user_password
-    }).then((res) => {
-        console.log();
-    })
-        .catch((err) => {
-            alert(err.message);
-            console.log(err.code);
-            console.log(err.message);
+
+let readId = document.getElementById('display_read_data');
+let readIdBtn = document.getElementById('readDataFromFirebase');
+
+let insertBtn = document.getElementById('create-acct-btn');
+
+
+// get data
+
+// collection ref
+const colRef = collection(db, 'users')
+
+// get collection data
+getDocs(colRef)
+    .then((snapshot) => {
+        let users = []
+        snapshot.docs.forEach((doc) => {
+            users.push({ ...doc.data(), id: doc.id })
         })
-}
+        console.log(users)
+    })
+    .catch(err => {
+        console.log(err.message)
+    })
+
+
+    // adding docs
+const addUserForm = document.getElementById('create-acct')
+addUserForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    addDoc(colRef, {
+        email: addUserForm.email.value,
+    })
+    .then(() => {
+        addUserForm.reset()
+    })
+})
+
+
+// insertBtn.addEventListener('click', readData);
+
+
+
+
+
+
+
+
+
+// function write_db() {
+//     console.log("Working");
+//     var db = getDatabase();
+//     var userId =document.getElementById('create-acct');
+//     var create_db_table = ref(db, 'users/' + 'usersTable/');
+//     var user_name = document.getElementById("email_signup").value;
+//     var user_password = document.getElementById("password_signup").value;
+
+
+//     if (user_name == '' || user_password == '') {
+//         alert("Please fill out all fields");
+//         console.log("Please fill out all fields");
+//         throw "Please fill out all fields";
+//     }
+//     set(ref(db, '/users/' + 'usersTable/'), {
+//         user_name: user_name,
+//         user_name_password: user_password
+//     }).then((res) => {
+//         console.log();
+//     })
+//         .catch((err) => {
+//             alert(err.message);
+//             console.log(err.code);
+//             console.log(err.message);
+//         })
+// }
 
 // Read
 function read_db() {
     var db = getDatabase();
-    var connect_db = ref(db, 'users/' + 'usersTable/');
+    var connect_db = ref(db, 'users/');
     var retrieve_data = '';
     console.log("Reading");
     onValue(connect_db, (snapshot) => {
@@ -60,9 +116,9 @@ function read_db() {
     }
 }
 // Call
-var write_data_to_firebase = document.getElementById("create-acct-btn");
-write_data_to_firebase.addEventListener('click', write_db);
+// var write_data_to_firebase = document.getElementById("create-acct-btn");
+// write_data_to_firebase.addEventListener('click', write_db);
 
 // Call
-var read_data_from_firebase = document.getElementById("read_data_from_firebase");
-readDataFromFirebase.addEventListener('click', read_db);
+// var read_data_from_firebase = document.getElementById("readDataFromFirebase");
+// readDataFromFirebase.addEventListener('click', read_db);
