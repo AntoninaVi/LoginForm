@@ -4,20 +4,26 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
 }
 
 body {
     font-family: "Quicksand", sans-serif;
+    overflow: hidden;
 }
 .wrapper {
     background-image: url(img/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: inherit;
+    overflow: hidden;
+}
+@media screen and (max-width: 860px) {
+    .wrapper {
+        background-position: 15% bottom;
+    }
 }
 .container {
-    max-width: 1160px;
+    max-width: 1360px;
     width: 100%;
     min-height: 100vh;
     display: grid;
@@ -26,6 +32,19 @@ body {
     align-items: center;
     margin: auto;
     padding: 2em;
+    overflow: hidden;
+}
+@media screen and (max-width: 860px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 400px) {
+    .container {
+        transform: scale(0.9);
+        padding: 1em;
+    }
 }
 
 .welcome-container {
@@ -35,6 +54,18 @@ body {
     align-items: center;
     justify-content: left;
     margin-top: -10em;
+}
+@media screen and (max-width: 860px) {
+    .welcome-container {
+        gap: 2em;
+        margin-top: 1.5em;
+    }
+}
+@media screen and (max-width: 400px) {
+    .welcome-container {
+        transform: scale(0.8);
+        margin-top: -1em;
+    }
 }
 .logotype {
     display: flex;
@@ -46,9 +77,15 @@ body {
     line-height: 22px;
     color: #ffffff;
 }
+
 .logo {
     max-width: 3.7em;
     width: 100%;
+}
+@media screen and (max-width: 860px) {
+    .logo {
+        color: #3ab6da;
+    }
 }
 
 .welcome-title {
@@ -61,6 +98,12 @@ body {
     text-transform: uppercase;
     color: #ffffff;
     margin-bottom: 1em;
+}
+@media screen and (max-width: 400px) {
+    .welcome-title {
+        font-size: 18px;
+        line-height: 23px;
+    }
 }
 .welcome-description {
     font-family: "Quicksand";
@@ -118,6 +161,13 @@ input:last-of-type {
     text-transform: uppercase;
     color: #00344d;
 }
+@media screen and (max-width: 540px) {
+    .login-title {
+        font-size: 18px;
+        line-height: 23px;
+        margin-top: -2.5em;
+    }
+}
 
 .login-description {
     font-family: "Quicksand";
@@ -145,6 +195,12 @@ input:last-of-type {
     width: 100%;
     padding: 0.9em;
     border: none;
+}
+@media screen and (max-width: 860px) {
+    #submit,
+    #create-acct-btn {
+        background: #6dbae3;
+    }
 }
 
 button:hover {
@@ -177,23 +233,30 @@ button:hover {
     margin-left: auto;
 }
 #readDataFromFirebase {
-    display: flex;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
     font-family: "Quicksand";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     text-align: center;
-    color: coral;
+    color: rgb(4, 4, 3);
     background-color: transparent;
-    border: 1px solid coral;
+    border: 1px solid rgb(35, 35, 35);
     border-radius: 10px;
     padding: 1em;
 }
-.copyright{
-   position: relative;
-  left: 55%;;
+.copyright {
+    position: relative;
+    left: 55%;
     padding-bottom: 1.5em;
+}
+#readId {
+    width: 100%;
+    max-width: 20em;
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
 }

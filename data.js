@@ -19,7 +19,7 @@ let userEmail = document.getElementById('email_signup');
 
 
 let readIdBtn = document.getElementById('readDataFromFirebase');
-let readId = document.getElementById('display_read_data');
+let readId = document.getElementById('readId');
 
 
 
